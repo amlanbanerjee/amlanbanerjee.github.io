@@ -1,0 +1,11 @@
+---
+title: "Teacher's Salary Estimates - ACS 5 year vs. NEA"
+output: html_document
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("R Code - Salary.R")
+p12; p34; p56; p78; p910; p1112; p1314; p1516; p1718; p1920; p2122; p2324; p2526; p2728; p2930; 
+p3132; p3334; p3536; p3738; p3940; p4142; p4344; p4546; p4748; p4950; p51
+```
+

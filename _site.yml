@@ -1,0 +1,31 @@
+name: "Amlan's Project Dashboard"
+output_dir: "."
+navbar:
+  title: "Amlan's Dashboard"
+  left:
+    - text: "About"
+      href: index.html
+    - text: "Job Growth Model"
+      href: job.html
+      menu:
+        - text: "Description"
+          href: job_des.html
+        - text: "Model"
+          href: job_model.html
+    - text: "Rankings and Estimates"
+      href: RandE.html
+      menu:
+        - text: "Charts"
+          href: RandE_charts.html
+        - text: "Tables"
+          href: RandE_tables.html
+    - text: "Laboratory"
+      href: lab.html
+
+output:
+  html_document:
+    theme: cosmo # http://bootswatch.com/
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: styles.css

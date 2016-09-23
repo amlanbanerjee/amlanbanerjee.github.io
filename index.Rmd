@@ -1,0 +1,13 @@
+---
+title: "Welcome to Amlan's Project Dashboard"
+---
+Current Projects:
+
+1. Teaching employment projection model
+2. Rankings and Estimates Report
+3. Economic impacts of GPO-WEP Social Security provisions
+4. Testing Survey 
+
+
+
+

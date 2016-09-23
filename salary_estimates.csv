@@ -1,0 +1,613 @@
+State,Year,Salary,Source,Note
+Alabama,11,49034,ACS,
+Alabama,12,49292,ACS,
+Alabama,13,49643,ACS,
+Alabama,14,49742,ACS,
+Alabama,15,50039,ACS,
+Alabama,16,50456,ACS,
+Alaska,11,61294,ACS,
+Alaska,12,61933,ACS,
+Alaska,13,62045,ACS,
+Alaska,14,63287,ACS,
+Alaska,15,63978,ACS,
+Alaska,16,65748,ACS,
+Arizona,11,48556,ACS,
+Arizona,12,48548,ACS,
+Arizona,13,48277,ACS,
+Arizona,14,47615,ACS,
+Arizona,15,47456,ACS,
+Arizona,16,47218,ACS,
+Arkansas,11,47245,ACS,
+Arkansas,12,47369,ACS,
+Arkansas,13,47043,ACS,
+Arkansas,14,46696,ACS,
+Arkansas,15,47048,ACS,
+Arkansas,16,47600,ACS,
+California,11,67957,ACS,
+California,12,68145,ACS,
+California,13,68584,ACS,
+California,14,68615,ACS,
+California,15,69172,ACS,
+California,16,69876,ACS,
+Colorado,11,51796,ACS,
+Colorado,12,51881,ACS,
+Colorado,13,52317,ACS,
+Colorado,14,52540,ACS,
+Colorado,15,52707,ACS,
+Colorado,16,53084,ACS,
+Connecticut,11,68142,ACS,
+Connecticut,12,68275,ACS,
+Connecticut,13,68835,ACS,
+Connecticut,14,69382,ACS,
+Connecticut,15,70302,ACS,
+Connecticut,16,70995,ACS,
+DC,11,72134,ACS,
+DC,12,70413,ACS,
+DC,13,72388,ACS,
+DC,14,71793,ACS,
+DC,15,71461,ACS,
+DC,16,73991,ACS,
+Delaware,11,60059,ACS,
+Delaware,12,59704,ACS,
+Delaware,13,60359,ACS,
+Delaware,14,60992,ACS,
+Delaware,15,61829,ACS,
+Delaware,16,63064,ACS,
+Florida,11,50811,ACS,
+Florida,12,50793,ACS,
+Florida,13,50745,ACS,
+Florida,14,50295,ACS,
+Florida,15,50133,ACS,
+Florida,16,50289,ACS,
+Georgia,11,53656,ACS,
+Georgia,12,53872,ACS,
+Georgia,13,53743,ACS,
+Georgia,14,53908,ACS,
+Georgia,15,53917,ACS,
+Georgia,16,54053,ACS,
+Hawaii,11,57189,ACS,
+Hawaii,12,56591,ACS,
+Hawaii,13,56522,ACS,
+Hawaii,14,56303,ACS,
+Hawaii,15,55963,ACS,
+Hawaii,16,56049,ACS,
+Idaho,11,47771,ACS,
+Idaho,12,48017,ACS,
+Idaho,13,48160,ACS,
+Idaho,14,48797,ACS,
+Idaho,15,49059,ACS,
+Idaho,16,49280,ACS,
+Illinois,11,59415,ACS,
+Illinois,12,59422,ACS,
+Illinois,13,60126,ACS,
+Illinois,14,61340,ACS,
+Illinois,15,62674,ACS,
+Illinois,16,63475,ACS,
+Indiana,11,53462,ACS,
+Indiana,12,53473,ACS,
+Indiana,13,53249,ACS,
+Indiana,14,52916,ACS,
+Indiana,15,53043,ACS,
+Indiana,16,53645,ACS,
+Iowa,11,47888,ACS,
+Iowa,12,48552,ACS,
+Iowa,13,49336,ACS,
+Iowa,14,50662,ACS,
+Iowa,15,51644,ACS,
+Iowa,16,53120,ACS,
+Kansas,11,47351,ACS,
+Kansas,12,47832,ACS,
+Kansas,13,47970,ACS,
+Kansas,14,48297,ACS,
+Kansas,15,48582,ACS,
+Kansas,16,49322,ACS,
+Kentucky,11,50104,ACS,
+Kentucky,12,50424,ACS,
+Kentucky,13,50305,ACS,
+Kentucky,14,50561,ACS,
+Kentucky,15,51315,ACS,
+Kentucky,16,51938,ACS,
+Louisiana,11,48257,ACS,
+Louisiana,12,48895,ACS,
+Louisiana,13,49397,ACS,
+Louisiana,14,49778,ACS,
+Louisiana,15,50228,ACS,
+Louisiana,16,50680,ACS,
+Maine,11,47638,ACS,
+Maine,12,47941,ACS,
+Maine,13,47866,ACS,
+Maine,14,48057,ACS,
+Maine,15,48566,ACS,
+Maine,16,50068,ACS,
+Maryland,11,63806,ACS,
+Maryland,12,64140,ACS,
+Maryland,13,65126,ACS,
+Maryland,14,65384,ACS,
+Maryland,15,66728,ACS,
+Maryland,16,67605,ACS,
+Massachusetts,11,63579,ACS,
+Massachusetts,12,63775,ACS,
+Massachusetts,13,63833,ACS,
+Massachusetts,14,64397,ACS,
+Massachusetts,15,65461,ACS,
+Massachusetts,16,66740,ACS,
+Michigan,11,65111,ACS,
+Michigan,12,65148,ACS,
+Michigan,13,64784,ACS,
+Michigan,14,64710,ACS,
+Michigan,15,65188,ACS,
+Michigan,16,65368,ACS,
+Minnesota,11,56543,ACS,
+Minnesota,12,56289,ACS,
+Minnesota,13,56157,ACS,
+Minnesota,14,56096,ACS,
+Minnesota,15,56835,ACS,
+Minnesota,16,57705,ACS,
+Mississippi,11,44170,ACS,
+Mississippi,12,44256,ACS,
+Mississippi,13,44009,ACS,
+Mississippi,14,44025,ACS,
+Mississippi,15,44061,ACS,
+Mississippi,16,44445,ACS,
+Missouri,11,47505,ACS,
+Missouri,12,47700,ACS,
+Missouri,13,47890,ACS,
+Missouri,14,48190,ACS,
+Missouri,15,48391,ACS,
+Missouri,16,48440,ACS,
+Montana,11,46823,ACS,
+Montana,12,46803,ACS,
+Montana,13,46669,ACS,
+Montana,14,47357,ACS,
+Montana,15,48144,ACS,
+Montana,16,48627,ACS,
+Nebraska,11,47040,ACS,
+Nebraska,12,46858,ACS,
+Nebraska,13,47273,ACS,
+Nebraska,14,47230,ACS,
+Nebraska,15,48359,ACS,
+Nebraska,16,49872,ACS,
+Nevada,11,53211,ACS,
+Nevada,12,53913,ACS,
+Nevada,13,54176,ACS,
+Nevada,14,54569,ACS,
+Nevada,15,55601,ACS,
+Nevada,16,56494,ACS,
+New Hampshire,11,52879,ACS,
+New Hampshire,12,52962,ACS,
+New Hampshire,13,53101,ACS,
+New Hampshire,14,53429,ACS,
+New Hampshire,15,53851,ACS,
+New Hampshire,16,55188,ACS,
+New Jersey,11,69406,ACS,
+New Jersey,12,69206,ACS,
+New Jersey,13,69112,ACS,
+New Jersey,14,69704,ACS,
+New Jersey,15,70596,ACS,
+New Jersey,16,71388,ACS,
+New Mexico,11,47507,ACS,
+New Mexico,12,48307,ACS,
+New Mexico,13,48155,ACS,
+New Mexico,14,48583,ACS,
+New Mexico,15,49069,ACS,
+New Mexico,16,49434,ACS,
+New York,11,71294,ACS,
+New York,12,71632,ACS,
+New York,13,72783,ACS,
+New York,14,74028,ACS,
+New York,15,75492,ACS,
+New York,16,76840,ACS,
+North Carolina,11,46992,ACS,
+North Carolina,12,46849,ACS,
+North Carolina,13,46698,ACS,
+North Carolina,14,46590,ACS,
+North Carolina,15,46497,ACS,
+North Carolina,16,46512,ACS,
+North Dakota,11,43592,ACS,
+North Dakota,12,43974,ACS,
+North Dakota,13,44738,ACS,
+North Dakota,14,45504,ACS,
+North Dakota,15,46221,ACS,
+North Dakota,16,46818,ACS,
+Ohio,11,58056,ACS,
+Ohio,12,57985,ACS,
+Ohio,13,58363,ACS,
+Ohio,14,58739,ACS,
+Ohio,15,59708,ACS,
+Ohio,16,60319,ACS,
+Oklahoma,11,41923,ACS,
+Oklahoma,12,42337,ACS,
+Oklahoma,13,42688,ACS,
+Oklahoma,14,42678,ACS,
+Oklahoma,15,43260,ACS,
+Oklahoma,16,43669,ACS,
+Oregon,11,53892,ACS,
+Oregon,12,54273,ACS,
+Oregon,13,54379,ACS,
+Oregon,14,54451,ACS,
+Oregon,15,54831,ACS,
+Oregon,16,55619,ACS,
+Pennsylvania,11,62719,ACS,
+Pennsylvania,12,62508,ACS,
+Pennsylvania,13,62362,ACS,
+Pennsylvania,14,62493,ACS,
+Pennsylvania,15,63488,ACS,
+Pennsylvania,16,64757,ACS,
+Rhode Island,11,66537,ACS,
+Rhode Island,12,67949,ACS,
+Rhode Island,13,68811,ACS,
+Rhode Island,14,69385,ACS,
+Rhode Island,15,70527,ACS,
+Rhode Island,16,71749,ACS,
+South Carolina,11,48828,ACS,
+South Carolina,12,48922,ACS,
+South Carolina,13,49173,ACS,
+South Carolina,14,49198,ACS,
+South Carolina,15,49045,ACS,
+South Carolina,16,49638,ACS,
+South Dakota,11,42191,ACS,
+South Dakota,12,41855,ACS,
+South Dakota,13,42064,ACS,
+South Dakota,14,42164,ACS,
+South Dakota,15,42488,ACS,
+South Dakota,16,43048,ACS,
+Tennessee,11,47184,ACS,
+Tennessee,12,47082,ACS,
+Tennessee,13,46899,ACS,
+Tennessee,14,46606,ACS,
+Tennessee,15,46876,ACS,
+Tennessee,16,47420,ACS,
+Texas,11,49363,ACS,
+Texas,12,49697,ACS,
+Texas,13,50164,ACS,
+Texas,14,50545,ACS,
+Texas,15,51022,ACS,
+Texas,16,51871,ACS,
+Utah,11,50806,ACS,
+Utah,12,50682,ACS,
+Utah,13,51333,ACS,
+Utah,14,51011,ACS,
+Utah,15,51017,ACS,
+Utah,16,51687,ACS,
+Vermont,11,52684,ACS,
+Vermont,12,53507,ACS,
+Vermont,13,53193,ACS,
+Vermont,14,53855,ACS,
+Vermont,15,55342,ACS,
+Vermont,16,56393,ACS,
+Virginia,11,54607,ACS,
+Virginia,12,54466,ACS,
+Virginia,13,54337,ACS,
+Virginia,14,54059,ACS,
+Virginia,15,54325,ACS,
+Virginia,16,54881,ACS,
+Washington,11,57688,ACS,
+Washington,12,58222,ACS,
+Washington,13,59050,ACS,
+Washington,14,59720,ACS,
+Washington,15,60556,ACS,
+Washington,16,61274,ACS,
+West Virginia,11,44867,ACS,
+West Virginia,12,44989,ACS,
+West Virginia,13,45419,ACS,
+West Virginia,14,45660,ACS,
+West Virginia,15,46108,ACS,
+West Virginia,16,46352,ACS,
+Wisconsin,11,54447,ACS,
+Wisconsin,12,54696,ACS,
+Wisconsin,13,55014,ACS,
+Wisconsin,14,55148,ACS,
+Wisconsin,15,55932,ACS,
+Wisconsin,16,56410,ACS,
+Wyoming,11,56242,ACS,
+Wyoming,12,57454,ACS,
+Wyoming,13,58297,ACS,
+Wyoming,14,58876,ACS,
+Wyoming,15,59390,ACS,
+Wyoming,16,60316,ACS,
+Alabama,11,47803,NEA,
+Alabama,12,48003,NEA,
+Alabama,13,47949,NEA,
+Alabama,14,48720,NEA,
+Alabama,15,48611,NEA,est
+Alabama,16,49781,NEA,est
+Alaska,11,62918,NEA,
+Alaska,12,62425,NEA,
+Alaska,13,65468,NEA,
+Alaska,14,65891,NEA,
+Alaska,15,66755,NEA,
+Alaska,16,67443,NEA,est
+Arizona,11,46637,NEA,
+Arizona,12,45193,NEA,
+Arizona,13,45264,NEA,
+Arizona,14,45335,NEA,est
+Arizona,15,45406,NEA,est
+Arizona,16,45477,NEA,est
+Arkansas,11,45998,NEA,
+Arkansas,12,46314,NEA,
+Arkansas,13,46631,NEA,
+Arkansas,14,47319,NEA,
+Arkansas,15,47823,NEA,est
+Arkansas,16,48220,NEA,est
+California,11,67871,NEA,
+California,12,69755,NEA,
+California,13,69435,NEA,
+California,14,71396,NEA,
+California,15,72535,NEA,est
+California,16,72842,NEA,est
+Colorado,11,49228,NEA,
+Colorado,12,49049,NEA,
+Colorado,13,49844,NEA,est
+Colorado,14,49615,NEA,
+Colorado,15,49828,NEA,est
+Colorado,16,50039,NEA,est
+Connecticut,11,69165,NEA,
+Connecticut,12,69465,NEA,
+Connecticut,13,69397,NEA,
+Connecticut,14,70583,NEA,
+Connecticut,15,71709,NEA,est
+Connecticut,16,72013,NEA,est
+DC,11,57934,NEA,est
+DC,12,58800,NEA,est
+DC,13,59679,NEA,est
+DC,14,59305,NEA,
+DC,15,59195,NEA,
+DC,16,59085,NEA,est
+Delaware,11,66601,NEA,est
+Delaware,12,68720,NEA,est
+Delaware,13,70906,NEA,est
+Delaware,14,73162,NEA,est
+Delaware,15,75490,NEA,est
+Delaware,16,75810,NEA,est
+Florida,11,45732,NEA,
+Florida,12,46504,NEA,
+Florida,13,46598,NEA,
+Florida,14,47780,NEA,
+Florida,15,48992,NEA,
+Florida,16,49199,NEA,est
+Georgia,11,52815,NEA,
+Georgia,12,52938,NEA,
+Georgia,13,52880,NEA,
+Georgia,14,52924,NEA,
+Georgia,15,53382,NEA,
+Georgia,16,54190,NEA,est
+Hawaii,11,55063,NEA,
+Hawaii,12,54070,NEA,
+Hawaii,13,54300,NEA,
+Hawaii,14,56291,NEA,
+Hawaii,15,57189,NEA,est
+Hawaii,16,57431,NEA,est
+Idaho,11,45450,NEA,est
+Idaho,12,44435,NEA,
+Idaho,13,44669,NEA,
+Idaho,14,44465,NEA,
+Idaho,15,45218,NEA,
+Idaho,16,45409,NEA,est
+Illinois,11,64509,NEA,
+Illinois,12,57636,NEA,
+Illinois,13,59113,NEA,est
+Illinois,14,60124,NEA,est
+Illinois,15,61083,NEA,est
+Illinois,16,61342,NEA,est
+Indiana,11,50801,NEA,
+Indiana,12,50516,NEA,
+Indiana,13,50077,NEA,
+Indiana,14,50289,NEA,
+Indiana,15,50877,NEA,est
+Indiana,16,50715,NEA,est
+Iowa,11,49844,NEA,
+Iowa,12,50240,NEA,
+Iowa,13,50946,NEA,
+Iowa,14,52032,NEA,
+Iowa,15,53408,NEA,est
+Iowa,16,54416,NEA,
+Kansas,11,46598,NEA,
+Kansas,12,46718,NEA,
+Kansas,13,47464,NEA,est
+Kansas,14,48221,NEA,est
+Kansas,15,48990,NEA,est
+Kansas,16,49197,NEA,est
+Kentucky,11,48908,NEA,
+Kentucky,12,49730,NEA,
+Kentucky,13,50203,NEA,
+Kentucky,14,50560,NEA,
+Kentucky,15,51155,NEA,est
+Kentucky,16,51666,NEA,est
+Louisiana,11,49006,NEA,
+Louisiana,12,50179,NEA,est
+Louisiana,13,51381,NEA,est
+Louisiana,14,49067,NEA,
+Louisiana,15,47886,NEA,
+Louisiana,16,46733,NEA,est
+Maine,11,47249,NEA,
+Maine,12,47338,NEA,
+Maine,13,48430,NEA,
+Maine,14,49232,NEA,
+Maine,15,50017,NEA,est
+Maine,16,50229,NEA,est
+Maryland,11,63960,NEA,
+Maryland,12,63634,NEA,
+Maryland,13,64248,NEA,
+Maryland,14,64546,NEA,
+Maryland,15,65477,NEA,est
+Maryland,16,66482,NEA,est
+Massachusetts,11,70340,NEA,
+Massachusetts,12,70474,NEA,
+Massachusetts,13,71983,NEA,est
+Massachusetts,14,73847,NEA,est
+Massachusetts,15,75398,NEA,est
+Massachusetts,16,76981,NEA,est
+Michigan,11,61560,NEA,
+Michigan,12,61560,NEA,est
+Michigan,13,62452,NEA,est
+Michigan,14,62166,NEA,est
+Michigan,15,63856,NEA,est
+Michigan,16,63878,NEA,est
+Minnesota,11,53680,NEA,
+Minnesota,12,53659,NEA,est
+Minnesota,13,54945,NEA,est
+Minnesota,14,54752,NEA,
+Minnesota,15,56670,NEA,
+Minnesota,16,56910,NEA,est
+Mississippi,11,41975,NEA,
+Mississippi,12,41976,NEA,
+Mississippi,13,41814,NEA,
+Mississippi,14,42187,NEA,est
+Mississippi,15,42564,NEA,est
+Mississippi,16,42744,NEA,est
+Missouri,11,45321,NEA,
+Missouri,12,45715,NEA,est
+Missouri,13,46226,NEA,est
+Missouri,14,46752,NEA,est
+Missouri,15,47409,NEA,est
+Missouri,16,47849,NEA,est
+Montana,11,47132,NEA,est
+Montana,12,47839,NEA,
+Montana,13,48855,NEA,
+Montana,14,49893,NEA,est
+Montana,15,50670,NEA,est
+Montana,16,51215,NEA,est
+Nebraska,11,47965,NEA,
+Nebraska,12,47984,NEA,
+Nebraska,13,48842,NEA,
+Nebraska,14,49539,NEA,
+Nebraska,15,50525,NEA,est
+Nebraska,16,51364,NEA,est
+Nevada,11,53023,NEA,est
+Nevada,12,54559,NEA,est
+Nevada,13,55957,NEA,est
+Nevada,14,55813,NEA,
+Nevada,15,56703,NEA,est
+Nevada,16,56943,NEA,est
+New Hampshire,11,52792,NEA,est
+New Hampshire,12,54177,NEA,est
+New Hampshire,13,55599,NEA,est
+New Hampshire,14,57057,NEA,est
+New Hampshire,15,58554,NEA,est
+New Hampshire,16,58802,NEA,est
+New Jersey,11,66612,NEA,
+New Jersey,12,67078,NEA,
+New Jersey,13,67447,NEA,
+New Jersey,14,68238,NEA,
+New Jersey,15,69038,NEA,est
+New Jersey,16,69330,NEA,est
+New Mexico,11,46888,NEA,
+New Mexico,12,45622,NEA,
+New Mexico,13,45453,NEA,
+New Mexico,14,45727,NEA,
+New Mexico,15,46625,NEA,est
+New Mexico,16,47163,NEA,est
+New York,11,72708,NEA,
+New York,12,73398,NEA,
+New York,13,75279,NEA,est
+New York,14,76409,NEA,
+New York,15,77628,NEA,est
+New York,16,77957,NEA,est
+North Carolina,11,46700,NEA,
+North Carolina,12,45933,NEA,
+North Carolina,13,45737,NEA,
+North Carolina,14,44990,NEA,
+North Carolina,15,47819,NEA,
+North Carolina,16,47985,NEA,est
+North Dakota,11,44807,NEA,
+North Dakota,12,46058,NEA,est
+North Dakota,13,47344,NEA,est
+North Dakota,14,48666,NEA,est
+North Dakota,15,50025,NEA,est
+North Dakota,16,50237,NEA,est
+Ohio,11,56715,NEA,
+Ohio,12,56715,NEA,
+Ohio,13,56307,NEA,
+Ohio,14,55913,NEA,
+Ohio,15,56172,NEA,est
+Ohio,16,56410,NEA,est
+Oklahoma,11,44343,NEA,
+Oklahoma,12,44391,NEA,
+Oklahoma,13,44373,NEA,
+Oklahoma,14,44547,NEA,est
+Oklahoma,15,45317,NEA,est
+Oklahoma,16,44921,NEA,est
+Oregon,11,56503,NEA,
+Oregon,12,56941,NEA,
+Oregon,13,57600,NEA,
+Oregon,14,58638,NEA,
+Oregon,15,59811,NEA,
+Oregon,16,60064,NEA,est
+Pennsylvania,11,60760,NEA,
+Pennsylvania,12,61934,NEA,
+Pennsylvania,13,62994,NEA,
+Pennsylvania,14,63701,NEA,
+Pennsylvania,15,64447,NEA,est
+Pennsylvania,16,64991,NEA,est
+Rhode Island,11,60923,NEA,est
+Rhode Island,12,62186,NEA,est
+Rhode Island,13,63474,NEA,est
+Rhode Island,14,64696,NEA,est
+Rhode Island,15,65918,NEA,est
+Rhode Island,16,66197,NEA,est
+South Carolina,11,47050,NEA,
+South Carolina,12,47428,NEA,
+South Carolina,13,48375,NEA,
+South Carolina,14,48430,NEA,
+South Carolina,15,48486,NEA,est
+South Carolina,16,48542,NEA,est
+South Dakota,11,39850,NEA,
+South Dakota,12,38804,NEA,
+South Dakota,13,39018,NEA,
+South Dakota,14,40023,NEA,
+South Dakota,15,40934,NEA,est
+South Dakota,16,42025,NEA,est
+Tennessee,11,45891,NEA,
+Tennessee,12,47082,NEA,
+Tennessee,13,47563,NEA,
+Tennessee,14,47742,NEA,
+Tennessee,15,47979,NEA,est
+Tennessee,16,48708,NEA,est
+Texas,11,48638,NEA,
+Texas,12,48373,NEA,
+Texas,13,48819,NEA,
+Texas,14,49690,NEA,
+Texas,15,50713,NEA,est
+Texas,16,51758,NEA,est
+Utah,11,45329,NEA,
+Utah,12,45432,NEA,
+Utah,13,45543,NEA,
+Utah,14,45695,NEA,
+Utah,15,45848,NEA,est
+Utah,16,46042,NEA,est
+Vermont,11,51372,NEA,
+Vermont,12,53896,NEA,
+Vermont,13,53735,NEA,
+Vermont,14,55958,NEA,
+Vermont,15,57642,NEA,est
+Vermont,16,58901,NEA,est
+Virginia,11,47564,NEA,
+Virginia,12,48114,NEA,
+Virginia,13,48988,NEA,
+Virginia,14,49786,NEA,est
+Virginia,15,50620,NEA,est
+Virginia,16,50834,NEA,est
+Washington,11,52926,NEA,
+Washington,12,52232,NEA,
+Washington,13,52234,NEA,
+Washington,14,52969,NEA,
+Washington,15,52502,NEA,est
+Washington,16,52539,NEA,est
+West Virginia,11,44260,NEA,
+West Virginia,12,45399,NEA,
+West Virginia,13,45453,NEA,
+West Virginia,14,45086,NEA,
+West Virginia,15,45783,NEA,est
+West Virginia,16,45977,NEA,est
+Wisconsin,11,54207,NEA,
+Wisconsin,12,53792,NEA,
+Wisconsin,13,53797,NEA,
+Wisconsin,14,53679,NEA,
+Wisconsin,15,54535,NEA,est
+Wisconsin,16,54766,NEA,est
+Wyoming,11,56100,NEA,
+Wyoming,12,56774,NEA,
+Wyoming,13,56775,NEA,
+Wyoming,14,56583,NEA,
+Wyoming,15,57414,NEA,est
+Wyoming,16,57761,NEA,est

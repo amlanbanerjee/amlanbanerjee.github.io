@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Teacher’s Salary Estimates - ACS 5 year vs. NEA</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/htmlwidgets-0.7/htmlwidgets.js"></script>
+<link href="site_libs/plotlyjs-1.10.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotlyjs-1.10.1/plotly-latest.min.js"></script>
+<script src="site_libs/plotly-binding-3.6.0/plotly.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="site_libs/highlight/textmate.css"
+      type="text/css" />
+<script src="site_libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Amlan's Dashboard</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">About</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Job Growth Model
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="job_des.html">Description</a>
+    </li>
+    <li>
+      <a href="job_model.html">Model</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Rankings and Estimates
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="RandE_charts.html">Charts</a>
+    </li>
+    <li>
+      <a href="RandE_tables.html">Tables</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="lab.html">Laboratory</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Teacher’s Salary Estimates - ACS 5 year vs. NEA</h1>
+
+</div>
+
+
+<p><div id="htmlwidget-2fb9b986efbd9205de4b" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2fb9b986efbd9205de4b">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47803,48003,47949,48720,48611,49781],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[49034,49292,49643,49742,50039,50456],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[62918,62425,65468,65891,66755,67443],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[61294,61933,62045,63287,63978,65748],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Alabama","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Alaska","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-29ae5c6f9fe5010671a4" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-29ae5c6f9fe5010671a4">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[46637,45193,45264,45335,45406,45477],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[48556,48548,48277,47615,47456,47218],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[45998,46314,46631,47319,47823,48220],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47245,47369,47043,46696,47048,47600],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Arizona","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Arkansas","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-90baacc21c3c061b5d1e" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-90baacc21c3c061b5d1e">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[67871,69755,69435,71396,72535,72842],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[67957,68145,68584,68615,69172,69876],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[49228,49049,49844,49615,49828,50039],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[51796,51881,52317,52540,52707,53084],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"California","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Colorado","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-3a377adbdc78a9f8aec0" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3a377adbdc78a9f8aec0">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[69165,69465,69397,70583,71709,72013],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[68142,68275,68835,69382,70302,70995],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[57934,58800,59679,59305,59195,59085],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[72134,70413,72388,71793,71461,73991],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Connecticut","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"DC","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-33e6d8c2b04cee898136" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-33e6d8c2b04cee898136">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[66601,68720,70906,73162,75490,75810],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[60059,59704,60359,60992,61829,63064],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[45732,46504,46598,47780,48992,49199],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[50811,50793,50745,50295,50133,50289],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Delaware","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Florida","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-c0cc29ce8bb2b32b60c9" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c0cc29ce8bb2b32b60c9">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[52815,52938,52880,52924,53382,54190],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[53656,53872,53743,53908,53917,54053],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[55063,54070,54300,56291,57189,57431],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[57189,56591,56522,56303,55963,56049],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Georgia","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Hawaii","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-a19d8182e2f9bafeb339" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a19d8182e2f9bafeb339">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[45450,44435,44669,44465,45218,45409],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47771,48017,48160,48797,49059,49280],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[64509,57636,59113,60124,61083,61342],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[59415,59422,60126,61340,62674,63475],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Idaho","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Illinois","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-815efc084d5e3010122a" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-815efc084d5e3010122a">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[50801,50516,50077,50289,50877,50715],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[53462,53473,53249,52916,53043,53645],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[49844,50240,50946,52032,53408,54416],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47888,48552,49336,50662,51644,53120],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Indiana","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Iowa","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-ca1c8e6d2e5b7c022658" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ca1c8e6d2e5b7c022658">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[46598,46718,47464,48221,48990,49197],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47351,47832,47970,48297,48582,49322],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[48908,49730,50203,50560,51155,51666],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[50104,50424,50305,50561,51315,51938],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Kansas","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Kentucky","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-23d09cb7a51f5103d098" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-23d09cb7a51f5103d098">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[49006,50179,51381,49067,47886,46733],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[48257,48895,49397,49778,50228,50680],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47249,47338,48430,49232,50017,50229],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47638,47941,47866,48057,48566,50068],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Louisiana","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Maine","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-700c83d395003e03cc6b" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-700c83d395003e03cc6b">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[63960,63634,64248,64546,65477,66482],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[63806,64140,65126,65384,66728,67605],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[70340,70474,71983,73847,75398,76981],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[63579,63775,63833,64397,65461,66740],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Maryland","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Massachusetts","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-626214e69985c39cdf65" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-626214e69985c39cdf65">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[61560,61560,62452,62166,63856,63878],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[65111,65148,64784,64710,65188,65368],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[53680,53659,54945,54752,56670,56910],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[56543,56289,56157,56096,56835,57705],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Michigan","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Minnesota","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-b6eaa15fd3a7f6269517" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b6eaa15fd3a7f6269517">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[41975,41976,41814,42187,42564,42744],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[44170,44256,44009,44025,44061,44445],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[45321,45715,46226,46752,47409,47849],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47505,47700,47890,48190,48391,48440],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Mississippi","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Missouri","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-16b04a0f04b9ab69b453" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-16b04a0f04b9ab69b453">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47132,47839,48855,49893,50670,51215],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[46823,46803,46669,47357,48144,48627],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47965,47984,48842,49539,50525,51364],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47040,46858,47273,47230,48359,49872],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Montana","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Nebraska","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-e00654fdc55e5e0a7a6d" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e00654fdc55e5e0a7a6d">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[53023,54559,55957,55813,56703,56943],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[53211,53913,54176,54569,55601,56494],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[52792,54177,55599,57057,58554,58802],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[52879,52962,53101,53429,53851,55188],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Nevada","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"New Hampshire","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-a5ddbd1d17a50299fa03" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a5ddbd1d17a50299fa03">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[66612,67078,67447,68238,69038,69330],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[69406,69206,69112,69704,70596,71388],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[46888,45622,45453,45727,46625,47163],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47507,48307,48155,48583,49069,49434],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"New Jersey","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"New Mexico","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-edee2ef3e461933551f1" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-edee2ef3e461933551f1">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[72708,73398,75279,76409,77628,77957],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[71294,71632,72783,74028,75492,76840],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[46700,45933,45737,44990,47819,47985],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[46992,46849,46698,46590,46497,46512],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"New York","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"North Carolina","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-261cb2e4c2bf87c543a9" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-261cb2e4c2bf87c543a9">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[44807,46058,47344,48666,50025,50237],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[43592,43974,44738,45504,46221,46818],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[56715,56715,56307,55913,56172,56410],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[58056,57985,58363,58739,59708,60319],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"North Dakota","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Ohio","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-d3a4ee278cf72dc6caa2" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d3a4ee278cf72dc6caa2">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[44343,44391,44373,44547,45317,44921],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[41923,42337,42688,42678,43260,43669],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[56503,56941,57600,58638,59811,60064],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[53892,54273,54379,54451,54831,55619],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Oklahoma","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Oregon","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-0bcefbaf57e3fa59e652" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0bcefbaf57e3fa59e652">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[60760,61934,62994,63701,64447,64991],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[62719,62508,62362,62493,63488,64757],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[60923,62186,63474,64696,65918,66197],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[66537,67949,68811,69385,70527,71749],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Pennsylvania","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Rhode Island","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-b446c64c1e00c4a38e33" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b446c64c1e00c4a38e33">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47050,47428,48375,48430,48486,48542],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[48828,48922,49173,49198,49045,49638],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[39850,38804,39018,40023,40934,42025],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[42191,41855,42064,42164,42488,43048],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"South Carolina","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"South Dakota","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-dfca87ef7ee11df3c6ae" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dfca87ef7ee11df3c6ae">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[45891,47082,47563,47742,47979,48708],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47184,47082,46899,46606,46876,47420],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[48638,48373,48819,49690,50713,51758],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[49363,49697,50164,50545,51022,51871],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Tennessee","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Texas","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-ecb2c350d78accbcfae2" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ecb2c350d78accbcfae2">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[45329,45432,45543,45695,45848,46042],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[50806,50682,51333,51011,51017,51687],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[51372,53896,53735,55958,57642,58901],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[52684,53507,53193,53855,55342,56393],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Utah","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Vermont","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-46d5abedbf722bafe426" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-46d5abedbf722bafe426">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[47564,48114,48988,49786,50620,50834],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[54607,54466,54337,54059,54325,54881],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[52926,52232,52234,52969,52502,52539],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[57688,58222,59050,59720,60556,61274],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"Virginia","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Washington","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-12acf18fe8e9524359c4" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-12acf18fe8e9524359c4">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[44260,45399,45453,45086,45783,45977],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[44867,44989,45419,45660,46108,46352],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[54207,53792,53797,53679,54535,54766],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x2","yaxis":"y2"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[54447,54696,55014,55148,55932,56410],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x2","yaxis":"y2"}],"layout":{"xaxis":{"domain":[0,0.45],"anchor":"y","title":"West Virginia","showgrid":true},"xaxis2":{"domain":[0.55,1],"anchor":"y2","title":"Wisconsin","showgrid":true,"showlegend":false},"yaxis2":{"domain":[0,1],"anchor":"x2"},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-8401d04894909064bfdf" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8401d04894909064bfdf">{"x":{"data":[{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[56100,56774,56775,56583,57414,57761],"name":"NEA","marker":{"color":"#E41A1C"},"xaxis":"x","yaxis":"y"},{"type":"scatter","inherit":false,"x":[11,12,13,14,15,16],"y":[56242,57454,58297,58876,59390,60316],"name":"ACS","marker":{"color":"#999999"},"xaxis":"x","yaxis":"y"}],"layout":{"xaxis":{"domain":[0,1],"anchor":"y","title":"Wyoming","showgrid":true},"yaxis":{"domain":[0,1],"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10}},"config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script></p>
+
+<p>Copyright &copy; 2016 Amlan Banerjee. All rights reserved.</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

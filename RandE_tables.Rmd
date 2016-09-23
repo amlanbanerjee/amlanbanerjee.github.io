@@ -1,0 +1,13 @@
+---
+title: "Teacher's Salary Estimates - ACS 5 year vs. NEA"
+output: html_document
+---
+
+```{r, echo=FALSE, warning=FALSE}
+library(DT)
+source("R Code - Salary.R")
+datatable(salary.dt, filter = 'top', class = 'cell-border stripe', style = 'default', 
+          options = list(pageLength = 50, autoWidth = TRUE))
+```
+
+
