@@ -24,8 +24,8 @@ navbar:
 
 output:
   html_document:
-    theme: cosmo # http://bootswatch.com/
+    theme: flatly # http://bootswatch.com/
     highlight: textmate
     include:
-      after_body: footer.html
+      # after_body: footer.html
     css: styles.css
