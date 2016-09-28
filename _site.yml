@@ -23,7 +23,7 @@ navbar:
       href: lab.html
       menu:
         - text: "Charter"
-          href: Charter.html
+          href: charter.html
 
 output:
   html_document:
