@@ -1,0 +1,42 @@
+---
+title: "Trend in Charter School Districts"
+output: html_document
+---
+
+The following plots show the trends in the opening of new school districts over the past ten years. Between 2004 and 2014, many school districts were formed and eventually closed. The plots only show the districts that survived until 2014. 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("charter.R")
+ggplotly(barplot1)
+```
+<br><br>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("charter.R")
+subplot(p, nrows = 4)
+```
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("charter.R")
+ggplotly(barplot2)
+```
+<br><br>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("charter.R")
+subplot(q, nrows = 4)
+```
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("charter.R")
+ggplotly(barplot3)
+```
+<br><br>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("charter.R")
+subplot(r, nrows = 4)
+```
+

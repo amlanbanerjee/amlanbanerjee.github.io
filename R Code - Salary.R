@@ -2,9 +2,6 @@ require(ggplot2)
 require(plotly)
 salary <- read.csv("C:/Users/Amlan/Documents/Amlan's Website/salary_estimates.csv", header=T)
 salary.dt <- read.csv("C:/Users/Amlan/Documents/Amlan's Website/salary_estimates_dt.csv", header=T)
-# p <- ggplot(data = salary, aes(x = Year, y = Salary, color = Source)) + geom_line()
-# q <- p + facet_wrap(~State)
-# ggplotly(q)
 
 state <- as.matrix(c("Alabama",
            "Alaska",
@@ -64,7 +61,7 @@ p12 <- subplot(
     margin = 0.05)
 p12 <- layout(p12,
             xaxis = list(title = state[1], showgrid=TRUE),
-            xaxis2 = list(title = state[2], showgrid=TRUE, showlegend = FALSE)
+            xaxis2 = list(title = state[2], showgrid=TRUE, showlegend = FALSE) #https://plot.ly/r/legend/#hiding-legend-entries
 )
 
 #

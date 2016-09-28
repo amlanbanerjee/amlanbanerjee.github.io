@@ -19,13 +19,16 @@ navbar:
           href: RandE_charts.html
         - text: "Tables"
           href: RandE_tables.html
-    - text: "Laboratory"
+    - text: "Datalab"
       href: lab.html
+      menu:
+        - text: "Charter"
+          href: Charter.html
 
 output:
   html_document:
     theme: flatly # http://bootswatch.com/
-    highlight: textmate
+    highlight: pygments # default
     include:
       # after_body: footer.html
     css: styles.css
