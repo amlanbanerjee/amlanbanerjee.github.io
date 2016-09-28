@@ -65,7 +65,7 @@ p <- plot_ly(df, type = 'scattergeo', lon = LON, lat = LAT, group = YEAR,
 subplot(p, nrows = 4)
 
 
-######################## Semi Charter
+######################## Mixed Charter
 df <- read.csv("C:/Users/Amlan/Documents/Amlan's Website/lea_charter_2.csv")
 df <- df[order(df$SHYEAR), ]
 
@@ -93,7 +93,7 @@ barplot2 <- ggplot(data=df,aes(x=factor(YEAR))) +
           axis.title.y=element_blank(),
           axis.text.y=element_blank(),
           axis.ticks.y=element_blank()) +
-    ggtitle("PLOT 2 - New Semi-Charter Districts per year 2004-2014")
+    ggtitle("PLOT 2 - New Mixed Charter Districts per year 2004-2014")
 
 ggplotly(barplot2)
 
@@ -116,7 +116,7 @@ q <- plot_ly(df, type = 'scattergeo', lon = LON, lat = LAT, group = YEAR,
              marker = list(color = toRGB("red"), opacity = 0.5)) %>%
     add_trace(lon = -78, lat = 47, mode = 'text', group = YEAR, type = 'scattergeo', showlegend = F,
               geo = paste0("geo", id), text = YEAR, data = df2) %>%
-    layout(title = 'Geographic Distribution of New Semi-Charter Districts per year 2004-2014<br> Source: <a href="https://nces.ed.gov/ccd/pubagency.asp">NCES</a>',
+    layout(title = 'Geographic Distribution of New Mixed Charter Districts per year 2004-2014<br> Source: <a href="https://nces.ed.gov/ccd/pubagency.asp">NCES</a>',
            geo = g,
            autosize = F,
            width = 1000,

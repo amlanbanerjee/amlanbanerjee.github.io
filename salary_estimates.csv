@@ -41,12 +41,12 @@ Connecticut,13,68835,ACS,
 Connecticut,14,69382,ACS,
 Connecticut,15,70302,ACS,
 Connecticut,16,70995,ACS,
-DC,11,72134,ACS,
-DC,12,70413,ACS,
-DC,13,72388,ACS,
-DC,14,71793,ACS,
-DC,15,71461,ACS,
-DC,16,73991,ACS,
+District of Columbia,11,72134,ACS,
+District of Columbia,12,70413,ACS,
+District of Columbia,13,72388,ACS,
+District of Columbia,14,71793,ACS,
+District of Columbia,15,71461,ACS,
+District of Columbia,16,73991,ACS,
 Delaware,11,60059,ACS,
 Delaware,12,59704,ACS,
 Delaware,13,60359,ACS,
@@ -347,18 +347,18 @@ Connecticut,13,69397,NEA,
 Connecticut,14,70583,NEA,
 Connecticut,15,71709,NEA,est
 Connecticut,16,72013,NEA,est
-DC,11,57934,NEA,est
-DC,12,58800,NEA,est
-DC,13,59679,NEA,est
-DC,14,59305,NEA,
-DC,15,59195,NEA,
-DC,16,59085,NEA,est
-Delaware,11,66601,NEA,est
-Delaware,12,68720,NEA,est
-Delaware,13,70906,NEA,est
-Delaware,14,73162,NEA,est
-Delaware,15,75490,NEA,est
-Delaware,16,75810,NEA,est
+District of Columbia,11,66601,NEA,est
+District of Columbia,12,68720,NEA,est
+District of Columbia,13,70906,NEA,est
+District of Columbia,14,73162,NEA,
+District of Columbia,15,75490,NEA,
+District of Columbia,16,75810,NEA,est
+Delaware,11,57934,NEA,est
+Delaware,12,58800,NEA,est
+Delaware,13,59679,NEA,est
+Delaware,14,59305,NEA,est
+Delaware,15,59195,NEA,est
+Delaware,16,59085,NEA,est
 Florida,11,45732,NEA,
 Florida,12,46504,NEA,
 Florida,13,46598,NEA,
