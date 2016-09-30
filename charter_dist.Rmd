@@ -11,7 +11,7 @@ data <- read.csv("C:/Users/Amlan/Documents/Amlan's Website/NEW CHARTER DISTRICTS
 kable(data,  align = c("c", "r"))
 ```
 
-The following plots show the geographic trends in the openings of new school districts over the past ten years.The plots only show the districts that survived until 2014. 
+The following plots show the geographic trends in the openings of new school districts over the past ten years. The plots only show the districts that survived until 2014. 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(plotly)
