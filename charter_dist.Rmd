@@ -64,7 +64,6 @@ p <- df %>%
     hovermode = FALSE
   )
 
-
 htmltools::tagList(list(as.widget(p)))
 
 ```
