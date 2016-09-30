@@ -1,0 +1,200 @@
+---
+title: "New Charter Districts"
+output: html_document
+---
+
+The following matrix shows the number of newly opened charter school districts by each year between 2004 and 2014 and the number of them that survived in the folowing years. For example, in school year 2014, 310 new charter districts were established, of which 100 were closed and 210 remained operating in 2014. 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+data <- read.csv("C:/Users/Amlan/Documents/Amlan's Website/NEW CHARTER DISTRICTS.csv", header = T)
+kable(data,  align = c("c", "r"))
+```
+
+The following plots show the geographic trends in the openings of new school districts over the past ten years.The plots only show the districts that survived until 2014. 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(plotly)
+library(dplyr)
+
+df <- read.csv("C:/Users/Amlan/Documents/Amlan's Website/lea_charter_1.csv")
+df <- df[order(df$SHYEAR), ]
+
+df$YEAR <- NA
+df$YEAR[df$SHYEAR =='2002-03'] <- 2003
+df$YEAR[df$SHYEAR =='2003-04'] <- 2004
+df$YEAR[df$SHYEAR =='2004-05'] <- 2005
+df$YEAR[df$SHYEAR =='2005-06'] <- 2006
+df$YEAR[df$SHYEAR =='2006-07'] <- 2007
+df$YEAR[df$SHYEAR =='2007-08'] <- 2008
+df$YEAR[df$SHYEAR =='2008-09'] <- 2009
+df$YEAR[df$SHYEAR =='2009-10'] <- 2010
+df$YEAR[df$SHYEAR =='2010-11'] <- 2011
+df$YEAR[df$SHYEAR =='2011-12'] <- 2012
+df$YEAR[df$SHYEAR =='2012-13'] <- 2013
+df$YEAR[df$SHYEAR =='2013-14'] <- 2014
+
+df <- subset(df, df$YEAR>2003)
+
+# common map properties
+g <- list(
+  scope = 'usa',
+  showland = T,
+  landcolor = toRGB("gray90"),
+  showcountries = F,
+  subunitcolor = toRGB("white")
+)
+
+one_map <- function(dat) {
+  plot_geo(dat) %>%
+    add_markers(x = ~LON, y = ~LAT, color = I("blue"), alpha = 0.5) %>%
+    add_text(x = -78, y = 47, text = ~unique(YEAR), color = I("black")) %>%
+    layout(geo = g)
+}
+
+df %>%
+  group_by(YEAR) %>%
+  do(map = one_map(.)) %>%
+  subplot(nrows = 4) %>%
+  layout(
+    showlegend = FALSE,
+    title = 'New Charter Districts per year 2004-2014<br> Source: <a href="https://nces.ed.gov/ccd/pubagency.asp">NCES</a>',
+    width = 1000,
+    height = 900,
+    hovermode = FALSE
+  )
+
+```
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+df <- read.csv("C:/Users/Amlan/Documents/Amlan's Website/lea_charter_2.csv")
+df <- df[order(df$SHYEAR), ]
+
+df$YEAR <- NA
+df$YEAR[df$SHYEAR =='2002-03'] <- 2003
+df$YEAR[df$SHYEAR =='2003-04'] <- 2004
+df$YEAR[df$SHYEAR =='2004-05'] <- 2005
+df$YEAR[df$SHYEAR =='2005-06'] <- 2006
+df$YEAR[df$SHYEAR =='2006-07'] <- 2007
+df$YEAR[df$SHYEAR =='2007-08'] <- 2008
+# df$YEAR[df$SHYEAR =='2008-09'] <- 2009
+df$YEAR[df$SHYEAR =='2009-10'] <- 2010
+df$YEAR[df$SHYEAR =='2010-11'] <- 2011
+df$YEAR[df$SHYEAR =='2011-12'] <- 2012
+df$YEAR[df$SHYEAR =='2012-13'] <- 2013
+df$YEAR[df$SHYEAR =='2013-14'] <- 2014
+
+df <- subset(df, df$YEAR>2003)
+
+barplot2 <- ggplot(data=df,aes(x=factor(YEAR))) +
+    geom_bar(fill="tomato") +
+    geom_text(stat='count',aes(label=..count..),vjust=-2, size=3.5) +
+    theme_minimal()+
+    theme(axis.title.x=element_blank(),
+          axis.title.y=element_blank(),
+          axis.text.y=element_blank(),
+          axis.ticks.y=element_blank()) +
+    ggtitle("PLOT 2 - New Mixed Charter Districts per year 2004-2014")
+
+ggplotly(barplot2)
+```
+<br>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# common map properties
+g <- list(
+  scope = 'usa',
+  showland = T,
+  landcolor = toRGB("gray90"),
+  showcountries = F,
+  subunitcolor = toRGB("white")
+)
+
+one_map <- function(dat) {
+  plot_geo(dat) %>%
+    add_markers(x = ~LON, y = ~LAT, color = I("red"), alpha = 0.5) %>%
+    add_text(x = -78, y = 47, text = ~unique(YEAR), color = I("black")) %>%
+    layout(geo = g)
+}
+
+df %>%
+  group_by(YEAR) %>%
+  do(map = one_map(.)) %>%
+  subplot(nrows = 4) %>%
+  layout(
+    showlegend = FALSE,
+    title = 'New Mixed Charter Districts per year 2004-2014<br> Source: <a href="https://nces.ed.gov/ccd/pubagency.asp">NCES</a>',
+    width = 1000,
+    height = 900,
+    hovermode = FALSE
+  )
+
+```
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+df <- read.csv("C:/Users/Amlan/Documents/Amlan's Website/lea_charter_2.csv")
+df <- df[order(df$SHYEAR), ]
+
+df$YEAR <- NA
+df$YEAR[df$SHYEAR =='2002-03'] <- 2003
+df$YEAR[df$SHYEAR =='2003-04'] <- 2004
+df$YEAR[df$SHYEAR =='2004-05'] <- 2005
+df$YEAR[df$SHYEAR =='2005-06'] <- 2006
+df$YEAR[df$SHYEAR =='2006-07'] <- 2007
+df$YEAR[df$SHYEAR =='2007-08'] <- 2008
+# df$YEAR[df$SHYEAR =='2008-09'] <- 2009
+df$YEAR[df$SHYEAR =='2009-10'] <- 2010
+df$YEAR[df$SHYEAR =='2010-11'] <- 2011
+df$YEAR[df$SHYEAR =='2011-12'] <- 2012
+df$YEAR[df$SHYEAR =='2012-13'] <- 2013
+df$YEAR[df$SHYEAR =='2013-14'] <- 2014
+
+df <- subset(df, df$YEAR>2003)
+
+barplot3 <- ggplot(data=df,aes(x=factor(YEAR))) +
+    geom_bar(fill="limegreen") +
+    geom_text(stat='count',aes(label=..count..),vjust=-2, size=3.5) +
+    theme_minimal()+
+    theme(axis.title.x=element_blank(),
+          axis.title.y=element_blank(),
+          axis.text.y=element_blank(),
+          axis.ticks.y=element_blank()) +
+    ggtitle("PLOT 3 - New Non-Charter Districts per year 2004-2014")
+
+ggplotly(barplot3)
+
+```
+<br>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# common map properties
+g <- list(
+  scope = 'usa',
+  showland = T,
+  landcolor = toRGB("gray90"),
+  showcountries = F,
+  subunitcolor = toRGB("white")
+)
+
+one_map <- function(dat) {
+  plot_geo(dat) %>%
+    add_markers(x = ~LON, y = ~LAT, color = I("forestgreen"), alpha = 0.5) %>%
+    add_text(x = -78, y = 47, text = ~unique(YEAR), color = I("black")) %>%
+    layout(geo = g)
+}
+
+df %>%
+  group_by(YEAR) %>%
+  do(map = one_map(.)) %>%
+  subplot(nrows = 4) %>%
+  layout(
+    showlegend = FALSE,
+    title = 'New Non-Charter Districts per year 2004-2014<br> Source: <a href="https://nces.ed.gov/ccd/pubagency.asp">NCES</a>',
+    width = 1000,
+    height = 900,
+    hovermode = FALSE
+  )
+
+```

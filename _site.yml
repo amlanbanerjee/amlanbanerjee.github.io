@@ -22,8 +22,10 @@ navbar:
     - text: "Datalab"
       href: lab.html
       menu:
-        - text: "Charter"
-          href: charter.html
+        - text: "Charter Districts"
+          href: charter_dist.html
+        - text: "Charter Schools"
+          href: charter_sch.html
 
 output:
   html_document:
