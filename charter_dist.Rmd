@@ -52,7 +52,7 @@ one_map <- function(dat) {
     layout(geo = g)
 }
 
-p <- df %>%
+df %>%
   group_by(YEAR) %>%
   do(map = one_map(.)) %>%
   subplot(nrows = 4) %>%
@@ -64,7 +64,7 @@ p <- df %>%
     hovermode = FALSE
   )
 
-htmltools::tagList(list(as.widget(p)))
+#htmltools::tagList(list(as.widget(p)))
 
 ```
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
