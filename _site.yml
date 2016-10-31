@@ -29,7 +29,7 @@ navbar:
 
 output:
   html_document:
-    theme: flatly # http://bootswatch.com/
+    theme: simplex # http://bootswatch.com/
     highlight: pygments # default
     include:
       # after_body: footer.html
