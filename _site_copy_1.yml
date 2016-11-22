@@ -12,6 +12,13 @@ navbar:
           href: job_des.html
         - text: "Model"
           href: job_model.html
+    - text: "Rankings and Estimates"
+      href: RandE.html
+      menu:
+        - text: "Charts"
+          href: RandE_charts.html
+        - text: "Tables"
+          href: RandE_tables.html
     - text: "Datalab"
       href: lab.html
       menu:

@@ -5,13 +5,13 @@ output: html_document
 
 About Me:
 
-I am a statistician/data scientist at National Education Association. My analytics work primarily focus on education and labor market statistics. I have created this space to share my work with colleagues and collaborators.   
+I am a statistician/data scientist at National Education Association. My analytics work primarily focus on education and labor statistics. I have created this space to share my work with colleagues and collaborators.   
 
 My public profile can be found here: [linkedin](https://www.linkedin.com/in/amlanbanerjee)
 
 Current Projects:
 
 1. Teaching employment projection model
-2. Rankings and Estimates Report
-3. Economic impacts of GPO-WEP Social Security provisions
-4. National Surveys 
+2. Teachers' compensation
+3. Impacts of social security provisions on public employees in education sector
+4. National surveys of teachers, students, education support professionals
