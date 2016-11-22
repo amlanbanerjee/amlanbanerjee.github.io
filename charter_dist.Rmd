@@ -3,5 +3,5 @@ title: "Charter Districts Open, Charter Districts Close"
 output: html_document
 ---
 
-Explore geographic patterns of openings and closings of charter school districts across the nation: [Charter Districts](http://rpubs.com/amlanbanerjee/229355)
+Explore geographic patterns of openings and closings of charter school districts across the nation: [Charter Districts](https://rpubs.com/amlanbanerjee/Charter_School_Districts)
 
