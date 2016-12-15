@@ -19,6 +19,8 @@ navbar:
           href: charter_dist.html
         - text: "Charter Schools"
           href: charter_sch.html
+        - text: "MAT-1140"
+          href: mat_1140.html
 
 output:
   html_document:

@@ -1,0 +1,15 @@
+---
+title: "Prediction of Statistics Final Exam Score"
+output: html_document
+---
+
+Click on this link to predict final exam score based on your performances on test 1, test 2, and test 3 in the (MAT-1140) Introduction to Statistics class: [Predict Score](https://amlanbanerjee.shinyapps.io/mat1140_finalscore_predict/)
+
+
+The prediction is based on the following multivariate regression model, which was estimated using Bayesian method. The posterior distribution of the model parameters are shown in the figure below.   
+
+$$ MODEL: final = \beta_0 + \beta_1 * test_1 + \beta_2 * test_2 + \beta_3 * test_3 $$   
+<figure>
+<img src="C:/Users/Amlan/Documents/Amlan's Website/Shiny_MAT1140/MAT1140-Predict-PostMarg1.png" alt='missing' />
+<figcaption>Figure Posterior Distribution of Model Parameters</figcaption>
+</figure>
