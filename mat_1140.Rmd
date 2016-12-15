@@ -9,5 +9,7 @@ Click on this link to predict final exam score based on your performances on tes
 The prediction is based on the following multivariate regression model, which was estimated using Bayesian method. The posterior distribution of the model parameters are shown in the figure below.   
 
 $$ MODEL: final = \beta_0 + \beta_1 * test_1 + \beta_2 * test_2 + \beta_3 * test_3 $$   
-<img src="MAT1140PredictPostMarg1.PNG" />
+<figure>
+<img src="MAT1140PredictPostMarg1.png" />
 <figcaption>Figure Posterior Distribution of Model Parameters</figcaption>
+</figure>
