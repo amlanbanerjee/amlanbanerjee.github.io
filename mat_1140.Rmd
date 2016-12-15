@@ -10,6 +10,6 @@ The prediction is based on the following multivariate regression model, which wa
 
 $$ MODEL: final = \beta_0 + \beta_1 * test_1 + \beta_2 * test_2 + \beta_3 * test_3 $$   
 <figure>
-<img src="C:/Users/Amlan/Documents/Amlan's Website/Shiny_MAT1140/MAT1140-Predict-PostMarg1.png" alt='missing' />
+<img src="C:/Users/Amlan/Documents/Amlan's Website/Shiny_MAT1140/MAT1140-Predict-PostMarg1.png" />
 <figcaption>Figure Posterior Distribution of Model Parameters</figcaption>
 </figure>
