@@ -5,6 +5,10 @@ output: html_document
 
 <br>
 
+_If this page doesn't load properly,_ [click here](http://rpubs.com/amlanbanerjee/LinearRegressionTutorial)
+
+<br>
+
 ## **Introduction**
 
 This tutorial shows step by step process to conduct a bi-variate linear regression analysis for an introductory statistics class. 
