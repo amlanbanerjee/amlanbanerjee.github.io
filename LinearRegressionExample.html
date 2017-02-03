@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Linear Regression</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 41px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+
+.section h2 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h3 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h4 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h5 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h6 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Amlan's Dashboard</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">About</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Job Growth Model
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="job_des.html">Description</a>
+    </li>
+    <li>
+      <a href="job_model.html">Model</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Intro Stat
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="LinearRegressionExample.html">Linear Regression</a>
+    </li>
+    <li>
+      <a href="mat_1140.html">MAT-1140</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Datalab
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="charter_dist.html">Charter Districts</a>
+    </li>
+    <li>
+      <a href="charter_sch.html">Charter Schools</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Linear Regression</h1>
+
+</div>
+
+
+<p><br></p>
+<div id="introduction" class="section level2">
+<h2><strong>Introduction</strong></h2>
+<p>This tutorial shows step by step process to conduct a bi-variate linear regression analysis for an introductory statistics class.</p>
+<p><br></p>
+</div>
+<div id="dataset" class="section level2">
+<h2><strong>Dataset</strong></h2>
+<p>The “Prestige (available from {car} package in R)” dataset is used in this analysis, which was obtained from Fox, J. and Weisberg, S. (2011) An R Companion to Applied Regression, Second Edition, Sage. The Prestige data set has 102 rows and 6 variables. The observations are occupations.</p>
+<p><br></p>
+<div id="variable-definitons" class="section level3">
+<h3><strong>Variable Definitons</strong></h3>
+<p>This data frame contains the following columns:<br />
+<strong>education</strong>: Average education of occupational incumbents, years, in 1971.<br />
+<strong>income</strong>: Average income of incumbents, dollars, in 1971.<br />
+<strong>women</strong>: Percentage of incumbents who are women.<br />
+<strong>prestige</strong>: Pineo-Porter prestige score for occupation, from a social survey conducted in the mid-1960s.<br />
+<strong>census</strong>: Canadian Census occupational code.<br />
+<strong>type</strong>: Type of occupation. bc - Blue Collar; prof - Professional, Managerial, and Technical; wc - White Collar.</p>
+<p><br></p>
+<div id="first-10-rows-of-the-dataset" class="section level4">
+<h4>First 10 rows of the dataset</h4>
+<pre><code>##                     education income women prestige census type
+## gov.administrators      13.11  12351 11.16     68.8   1113 prof
+## general.managers        12.26  25879  4.02     69.1   1130 prof
+## accountants             12.77   9271 15.70     63.4   1171 prof
+## purchasing.officers     11.42   8865  9.11     56.8   1175 prof
+## chemists                14.62   8403 11.68     73.5   2111 prof
+## physicists              15.64  11030  5.13     77.6   2113 prof
+## biologists              15.09   8258 25.65     72.6   2133 prof
+## architects              15.44  14163  2.69     78.1   2141 prof
+## civil.engineers         14.52  11377  1.03     73.1   2143 prof
+## mining.engineers        14.64  11023  0.94     68.8   2153 prof</code></pre>
+<p><br></p>
+</div>
+</div>
+<div id="examine-the-data-before-fitting-models" class="section level3">
+<h3><strong>Examine the data before fitting models</strong></h3>
+<pre><code>##    education          income          women           prestige    
+##  Min.   : 6.380   Min.   :  611   Min.   : 0.000   Min.   :14.80  
+##  1st Qu.: 8.445   1st Qu.: 4106   1st Qu.: 3.592   1st Qu.:35.23  
+##  Median :10.540   Median : 5930   Median :13.600   Median :43.60  
+##  Mean   :10.738   Mean   : 6798   Mean   :28.979   Mean   :46.83  
+##  3rd Qu.:12.648   3rd Qu.: 8187   3rd Qu.:52.203   3rd Qu.:59.27  
+##  Max.   :15.970   Max.   :25879   Max.   :97.510   Max.   :87.20  
+##      census       type   
+##  Min.   :1113   bc  :44  
+##  1st Qu.:3120   prof:31  
+##  Median :5135   wc  :23  
+##  Mean   :5402   NA&#39;s: 4  
+##  3rd Qu.:8312            
+##  Max.   :9517</code></pre>
+<blockquote>
+<p>Notice that the ‘type’ variable has 4 missing values.</p>
+</blockquote>
+<p><br></p>
+<div id="correlation-matrix" class="section level4">
+<h4><strong>Correlation Matrix</strong></h4>
+<pre><code>##            prestige education    income
+## prestige  1.0000000 0.8501769 0.7149057
+## education 0.8501769 1.0000000 0.5775802
+## income    0.7149057 0.5775802 1.0000000</code></pre>
+<blockquote>
+<p>Let’s focus on three variables of our interest - ‘prestige’, ‘education’, and ‘income’. While we observe that prestige is positively correlated with both education and income, education appears to be correlated more strongly than income with prestige.</p>
+</blockquote>
+<p><br></p>
+</div>
+<div id="plot-the-data-before-fitting-models" class="section level4">
+<h4><strong>Plot the data before fitting models</strong></h4>
+<p>Plot the data to look for outliers, non-linear relationships etc.</p>
+<p><img src="LinearRegressionExample_files/figure-html/unnamed-chunk-5-1.png" width="672" /><img src="LinearRegressionExample_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+<blockquote>
+<p>As expected, the relationship between education and prestige appears to be more linear than that between income and prestige.</p>
+</blockquote>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="linear-regression-model" class="section level2">
+<h2><strong>Linear Regression Model</strong></h2>
+<p>Next, we fit response variable ‘prestige’ with explanatory variables ‘education’ and ‘income’ separately and find out which variable is the stronger predictor.</p>
+<div id="education-model" class="section level3">
+<h3><strong>Education Model</strong></h3>
+<p><span class="math inline">\(prestige = b_{0} + b_{1}*education + e\)</span></p>
+<pre><code>## 
+## Call:
+## lm(formula = prestige ~ education, data = Prestige)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -26.0397  -6.5228   0.6611   6.7430  18.1636 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  -10.732      3.677  -2.919  0.00434 ** 
+## education      5.361      0.332  16.148  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 9.103 on 100 degrees of freedom
+## Multiple R-squared:  0.7228, Adjusted R-squared:   0.72 
+## F-statistic: 260.8 on 1 and 100 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p><strong>95% confidence interval of the estimated coefficients</strong></p>
+<pre><code>##                  2.5 %    97.5 %
+## (Intercept) -18.027220 -3.436744
+## education     4.702223  6.019533</code></pre>
+<blockquote>
+<p>The education variable appears to be highly significant. The <span class="math inline">\(R^{2}\)</span> suggests that the model explains 72% of the variability of the response variable ‘prestige’.</p>
+</blockquote>
+<p><br></p>
+</div>
+<div id="residual-plot-linear-regression-assumptions" class="section level3">
+<h3><strong>Residual Plot: Linear Regression Assumptions</strong></h3>
+<ul>
+<li>Ordinary least squares regression relies on several assumptions, including that the residuals are normally distributed and homoscedastic, the errors are independent and the relationships are linear.</li>
+<li>Investigate these assumptions visually by plotting the model:</li>
+</ul>
+<p><img src="LinearRegressionExample_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre><code>##            Test stat Pr(&gt;|t|)
+## education      2.596    0.011
+## Tukey test     2.596    0.009</code></pre>
+<p><img src="LinearRegressionExample_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
+<blockquote>
+<p>We observe that there is no linear relationship between the fitted values of ‘prestige’ and the residuals. Also, the Q-Q plot suggests that the residual is normally distributed (approximately).</p>
+</blockquote>
+<p><br></p>
+</div>
+<div id="income-model" class="section level3">
+<h3><strong>Income Model</strong></h3>
+<p><span class="math inline">\(prestige = b_{0} + b_{1}*log(income) + e\)</span></p>
+<pre><code>## 
+## Call:
+## lm(formula = prestige ~ log(income), data = Prestige)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -19.114  -9.342  -1.218   8.101  30.454 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -139.856     16.954  -8.249  6.6e-13 ***
+## log(income)   21.556      1.953  11.037  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 11.61 on 100 degrees of freedom
+## Multiple R-squared:  0.5492, Adjusted R-squared:  0.5447 
+## F-statistic: 121.8 on 1 and 100 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p><strong>95% confidence interval of the estimated coefficients</strong></p>
+<pre><code>##                  2.5 %     97.5 %
+## (Intercept) -173.49239 -106.21906
+## log(income)   17.68139   25.43134</code></pre>
+<blockquote>
+<p>Comparing <span class="math inline">\(R^{2}\)</span>, we can conclude that education is a better predictor of prestige than income.</p>
+</blockquote>
+<p><img src="LinearRegressionExample_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre><code>##             Test stat Pr(&gt;|t|)
+## log(income)     2.694    0.008
+## Tukey test      2.694    0.007</code></pre>
+<p><img src="LinearRegressionExample_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
+<p><br></p>
+</div>
+</div>
+<div id="comparing-models" class="section level2">
+<h2><strong>Comparing Models</strong></h2>
+<p>Do we get a better fit if we use both education and income in the model as predictors of prestige?</p>
+<div id="multivariate-model" class="section level3">
+<h3><strong>Multivariate Model</strong></h3>
+<p><span class="math inline">\(prestige = b_{0} + b_{1}*education + b_{2}*log(income) + e\)</span></p>
+<pre><code>## 
+## Call:
+## lm(formula = prestige ~ education + log(income), data = Prestige)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -17.0346  -4.5657  -0.1857   4.0577  18.1270 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -95.1940    10.9979  -8.656 9.27e-14 ***
+## education     4.0020     0.3115  12.846  &lt; 2e-16 ***
+## log(income)  11.4375     1.4371   7.959 2.94e-12 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 7.145 on 99 degrees of freedom
+## Multiple R-squared:  0.831,  Adjusted R-squared:  0.8275 
+## F-statistic: 243.3 on 2 and 99 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>##                   2.5 %     97.5 %
+## (Intercept) -117.016298 -73.371676
+## education      3.383824   4.620081
+## log(income)    8.585936  14.288979</code></pre>
+<p><img src="LinearRegressionExample_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre><code>##             Test stat Pr(&gt;|t|)
+## education       1.615    0.109
+## log(income)     0.221    0.825
+## Tukey test      0.653    0.514</code></pre>
+<p><img src="LinearRegressionExample_files/figure-html/unnamed-chunk-12-2.png" width="672" /></p>
+<p><br></p>
+<div id="compare-between-education-model-and-multivariate-model" class="section level4">
+<h4><strong>Compare between education model and multivariate model</strong></h4>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: prestige ~ education
+## Model 2: prestige ~ education + log(income)
+##   Res.Df    RSS Df Sum of Sq      F    Pr(&gt;F)    
+## 1    100 8287.0                                  
+## 2     99 5053.6  1    3233.4 63.341 2.942e-12 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<blockquote>
+<p>In this multivariate model, we find that <span class="math inline">\(R^{2}\)</span> is further improved. Also, the residual sum of squares is significantly lower than the education and income models. This suggests that combination of education and income is a better predictor of prestige than the bi-variate models.</p>
+</blockquote>
+<p><br></p>
+</div>
+<div id="to-explore-more-datasets-and-linear-regression-models-click-here" class="section level4">
+<h4><strong>To explore more datasets and linear regression models</strong> <a href="https://amlanbanerjee.shinyapps.io/bivariateregression/">click here</a></h4>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

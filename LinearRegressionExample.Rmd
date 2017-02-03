@@ -1,0 +1,163 @@
+---
+title: "Linear Regression"
+output: html_document
+---
+
+<br>
+
+## **Introduction**
+
+This tutorial shows step by step process to conduct a bi-variate linear regression analysis for an introductory statistics class. 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(car)
+```
+<br>
+
+## **Dataset**
+
+The "Prestige (available from {car} package in R)" dataset is used in this analysis, which was obtained from Fox, J. and Weisberg, S. (2011) An R Companion to Applied Regression, Second Edition, Sage.
+The Prestige data set has 102 rows and 6 variables. The observations are occupations.
+
+<br>
+
+### **Variable Definitons** 
+This data frame contains the following columns:  
+  **education**: Average education of occupational incumbents, years, in 1971.   
+  **income**: Average income of incumbents, dollars, in 1971.   
+  **women**: Percentage of incumbents who are women.   
+  **prestige**: Pineo-Porter prestige score for occupation, from a social survey conducted in the mid-1960s.   
+  **census**: Canadian Census occupational code.   
+  **type**: Type of occupation. bc - Blue Collar; prof - Professional, Managerial, and Technical; wc - White Collar. 
+
+<br>
+
+#### First 10 rows of the dataset
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# Top 10 rows of the dataset
+head(Prestige, n=10)
+```
+<br>
+
+### **Examine the data before fitting models**
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+summary(Prestige)
+Prestige <- subset(Prestige, select = c("prestige", "education", "income"))
+```
+> Notice that the 'type' variable has 4 missing values.
+
+<br>
+
+#### **Correlation Matrix**
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+cor(Prestige)
+```
+> Let's focus on three variables of our interest - 'prestige', 'education', and 'income'. While we observe that prestige is positively correlated with both education and income, education appears to be correlated more strongly than income with prestige.
+
+<br>
+
+#### **Plot the data before fitting models**
+
+Plot the data to look for outliers, non-linear relationships etc.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#par(mar = c(4, 4, 4, 4), mfrow = c(1, 2)) 
+plot(Prestige$education, Prestige$prestige, xlab = "Education", ylab = "Prestige")
+plot(Prestige$income, Prestige$prestige, xlab = "Income", ylab = "Prestige")
+```
+
+> As expected, the relationship between education and prestige appears to be more linear than that between income and prestige.
+
+<br>
+
+## **Linear Regression Model**
+
+Next, we fit response variable 'prestige' with explanatory variables 'education' and 'income' separately and find out which variable is the stronger predictor.  
+
+### **Education Model**
+  
+$prestige = b_{0} + b_{1}*education + e$ 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+edu.mod <- lm(prestige~education, data = Prestige)
+summary(edu.mod)
+#hist(residuals(edu.mod))
+```
+**95% confidence interval of the estimated coefficients**
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+confint(edu.mod)
+```
+
+> The education variable appears to be highly significant. The $R^{2}$ suggests that the model explains 72% of the variability of the response variable 'prestige'.
+
+<br>
+
+### **Residual Plot: Linear Regression Assumptions**
+
+* Ordinary least squares regression relies on several assumptions, including that the residuals are normally distributed and homoscedastic, the errors are independent and the relationships are linear.
+* Investigate these assumptions visually by plotting the model:
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+residualPlots(edu.mod)
+plot(edu.mod, which = c(2))
+```
+  
+> We observe that there is no linear relationship between the fitted values of 'prestige' and the residuals. Also, the Q-Q plot suggests that the residual is normally distributed (approximately).  
+
+<br>
+
+### **Income Model**
+  
+$prestige = b_{0} + b_{1}*log(income) + e$ 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+inc.mod <- lm(prestige~log(income), data = Prestige)
+summary(inc.mod)
+```
+**95% confidence interval of the estimated coefficients**
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+confint(inc.mod)
+```
+  
+> Comparing $R^{2}$, we can conclude that education is a better predictor of prestige than income.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+residualPlots(inc.mod)
+plot(inc.mod, which = c(2))
+```
+
+<br>
+
+## **Comparing Models** 
+Do we get a better fit if we use both education and income in the model as predictors of prestige?  
+  
+### **Multivariate  Model**
+  
+$prestige = b_{0} + b_{1}*education + b_{2}*log(income) + e$ 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+comb.mod <- lm(prestige~education + log(income), data = Prestige)
+summary(comb.mod)
+confint(comb.mod)
+residualPlots(comb.mod)
+plot(comb.mod, which = c(2))
+```
+  
+<br>
+  
+####**Compare between education model and multivariate model**
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+anova(edu.mod, comb.mod)
+```
+  
+> In this multivariate model, we find that $R^{2}$ is further improved. Also, the residual sum of squares is significantly lower than the education and income models. This suggests that combination of education and income is a better predictor of prestige than the bi-variate models.
+
+<br>
+
+#### **To explore more datasets and linear regression models** [click here](https://amlanbanerjee.shinyapps.io/bivariateregression/)

@@ -12,6 +12,13 @@ navbar:
           href: job_des.html
         - text: "Model"
           href: job_model.html
+    - text: "Intro Stat"
+      href: intro_stat.html
+      menu:
+        - text: "Linear Regression"
+          href: LinearRegressionExample.html
+        - text: "MAT-1140"
+          href: mat_1140.html
     - text: "Datalab"
       href: lab.html
       menu:
@@ -19,8 +26,6 @@ navbar:
           href: charter_dist.html
         - text: "Charter Schools"
           href: charter_sch.html
-        - text: "MAT-1140"
-          href: mat_1140.html
 
 output:
   html_document:
